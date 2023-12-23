@@ -1,7 +1,7 @@
 import pymongo
 import numpy as np 
 import pandas as pd
-from novelpy.utils.run_indicator_tools import create_output
+from InovelPy.utils.run_indicator_tools import create_output
 import tqdm
 import os
 import glob
