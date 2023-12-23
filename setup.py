@@ -14,7 +14,6 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
-      'pymongo',
       'joblib',
       'sklearn',
       'glob2',
