@@ -59,11 +59,11 @@ In order to run Atypicality, one first needs to create a co-occurrence matrix wi
 
 .. code-block:: python
 
-   import novelpy
+   import InovelPy
    import tqdm
 
    focal_year = 2000
-   Uzzi = novelpy.indicators.Uzzi2013(collection_name = 'references_sample',
+   Uzzi = InovelPy.indicators.Uzzi2013(collection_name = 'references_sample',
                                           id_variable = 'PMID',
                                           year_variable = 'year',
                                           variable = "c04_referencelist",
@@ -115,7 +115,7 @@ In order to run this novelty indicator you first need to create a co-occurence m
 
    focal_year = 2000
     
-   Foster = novelpy.indicators.Foster2015(collection_name = 'references_sample',
+   Foster = InovelPy.indicators.Foster2015(collection_name = 'references_sample',
                                           id_variable = 'PMID',
                                           year_variable = 'year',
                                           variable = "c04_referencelist",
@@ -165,11 +165,11 @@ In order to run "commonness" you first need to create a co-occurrence matrix wit
 
 .. code-block:: python
 
-   import novelpy
+   import InovelPy
 
    focal_year = 2000
 
-   Lee = novelpy.indicators.Lee2015(collection_name = 'references_sample',
+   Lee = InovelPy.indicators.Lee2015(collection_name = 'references_sample',
                                           id_variable = 'PMID',
                                           year_variable = 'year',
                                           variable = "c04_referencelist",
@@ -220,11 +220,11 @@ In order to run the indicator, one first needs to create a co-occurrence matrix 
 
 .. code-block:: python
 
-   import novelpy
+   import InovelPy
 
    focal_year = 2000
 
-   Wang = novelpy.indicators.Wang2017(collection_name = 'references_sample',
+   Wang = InovelPy.indicators.Wang2017(collection_name = 'references_sample',
                                           id_variable = 'PMID',
                                           year_variable = 'year',
                                           variable = "c04_referencelist",
@@ -279,10 +279,10 @@ In order to run the indicator you first need to embed articles using the functio
 
 .. code-block:: python
 
-   import novelpy
+   import InovelPy
 
    focal_year = 2000
-   shibayama = novelpy.indicators.Shibayama2021(
+   shibayama = InovelPy.indicators.Shibayama2021(
       collection_name = 'Citation_net_sample',
       collection_embedding_name = 'embedding',
       id_variable = 'PMID',
@@ -335,11 +335,11 @@ All indicators are computed at the same time, one need to run the following comm
 .. code-block:: python
 
 
-   import novelpy
+   import InovelPy
 
    focal_year = 2000
 
-   disruptiveness = novelpy.Disruptiveness(
+   disruptiveness = InovelPy.Disruptiveness(
      collection_name = 'Citation_net_sample_cleaned',
      focal_year = year,
      id_variable = 'PMID',
