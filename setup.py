@@ -15,7 +15,7 @@ setup(
     include_package_data=True,
     install_requires=[
       'joblib',
-      'sklearn',
+      'scikit-learn',
       'glob2',
       'tqdm',
       "networkx",
