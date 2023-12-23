@@ -35,7 +35,7 @@ setup(
       'seaborn'
     ],
     zip_safe=True,
-    description='A Bibliometric and Scientometric Library Powered with Artificial Intelligence Tools',
+    description='he goal of this package is to help scientometrician work with novelty indicators.',
     long_description=long_description,
     long_description_content_type='text/markdown',
 )
