@@ -19,7 +19,7 @@ setup(
       'glob2',
       'tqdm',
       "networkx",
-      'python-louvai',
+      'python-louvain',
       'numpy',
       'pickle-mixin',
       'scipy',
