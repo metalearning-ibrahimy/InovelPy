@@ -6,10 +6,10 @@ long_description = (this_directory / 'README.md').read_text()
 
 setup(
     name='InovelPy',
-    version='0.0.1',
+    version='1.0.1',
     license='GNU',
     author='Taufiqurrahman',
-    author_email='taufiqurrahman.info@gmail.com',
+    author_email='metalearning@pps-ibrahimy.ac.id',
     url='https://github.com/metalearning-ibrahimy/InovelPy',
     packages=find_packages(),
     include_package_data=True,
@@ -34,7 +34,7 @@ setup(
       'seaborn'
     ],
     zip_safe=True,
-    description='he goal of this package is to help scientometrician work with novelty indicators.',
+    description='The goal of this package is to help scientometrician work with novelty indicators.',
     long_description=long_description,
     long_description_content_type='text/markdown',
 )
