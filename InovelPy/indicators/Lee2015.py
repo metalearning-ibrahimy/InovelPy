@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 import scipy
 from scipy.sparse import csr_matrix, triu
-from novelpy.utils.run_indicator_tools import create_output
+from InovelPy.utils.run_indicator_tools import create_output
 
 # np.seterr(divide='ignore', invalid='ignore')
 
