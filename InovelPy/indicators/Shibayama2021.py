@@ -1,7 +1,7 @@
 # inspired from https://github.com/DeyunYinWIPO/Novelty/blob/main/novelty_sci.py
 import itertools
 import numpy as np
-from novelpy.utils.run_indicator_tools import Dataset
+from InovelPy.utils.run_indicator_tools import Dataset
 import pymongo
 import tqdm
 #from sklearn.metrics.pairwise import cosine_similarity
