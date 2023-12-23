@@ -2,12 +2,12 @@
 
 # -- Project information
 
-project = 'novelpy'
-copyright = '2021, Pelletier, Wirtz'
-author = 'Pelletier, Wirtz'
+project = 'InovelPy'
+copyright = '2023, Rahman'
+author = 'Rahman'
 
 release = '1.0'
-version = '0.1.4'
+version = '1.0.1'
 
 # -- General configuration
 
