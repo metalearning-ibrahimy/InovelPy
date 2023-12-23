@@ -7,7 +7,7 @@ Usage
 Installation
 ------------
 
-To use novelpy, first install it using pip:
+To use InovelPy, first install it using pip:
 
 .. code-block:: console
 
@@ -18,7 +18,7 @@ To use novelpy, first install it using pip:
 Format supported
 ----------------
 
-The package currently supports JSON files which should be located in Data/docs or a MongoDB. Here is a typical starting folder structure to run novelpy if one use JSON:
+The package currently supports JSON files which should be located in Data/docs or a MongoDB. Here is a typical starting folder structure to run InovelPy if one use JSON:
 
 ::
 
@@ -49,7 +49,7 @@ Sample
 
 We made available a small sample of data so one can get familiar with the package and the data structure needed. To get this sample, one needs to run the following code in the "project" folder:
 
->>> from novelpy.utils.get_sample import download_sample
+>>> from InovelPy.utils.get_sample import download_sample
 >>> download_sample()
 
 | This will give you files, as seen above. Read more about this sample structure `here <https://zenodo.org/record/5768348#.YdMGWlnjImA>`_.
@@ -139,7 +139,7 @@ Here is a straightforward implementation to run Foster et al. [2015] :cite:p:`fo
 .. code-block:: python
    
    # demo.py
-   import novelpy
+   import InovelPy
 
    ref_cooc = novelpy.utils.cooc_utils.create_cooc(
                     collection_name = "Ref_Journals_sample",
@@ -190,11 +190,11 @@ Here is a straightforward implementation to run Foster et al. [2015] :cite:p:`fo
 
    # demo.py
 
-   import novelpy
+   import InovelPy
    import tqdm
 
    for focal_year in tqdm.tqdm(range(2000,2011), desc = "Computing indicator for window of time"):
-       Foster = novelpy.indicators.Foster2015(collection_name = "Ref_Journals_sample",
+       Foster = InovelPy.indicators.Foster2015(collection_name = "Ref_Journals_sample",
                                               id_variable = 'PMID',
                                               year_variable = 'year',
                                               variable = "c04_referencelist",
@@ -249,11 +249,11 @@ Here is a straightforward implementation to run Foster et al. [2015] :cite:p:`fo
 
 .. code-block:: python
    
-   import novelpy
+   import InovelPy
 
    # Easy plot
 
-   dist = novelpy.utils.plot_dist(client_name="mongodb://localhost:27017",
+   dist = InovelPy.utils.plot_dist(client_name="mongodb://localhost:27017",
                                   db_name = "novelty_sample",
                                   doc_id = 20100198,
                                   doc_year = 2010,
@@ -269,10 +269,10 @@ Here is a straightforward implementation to run Foster et al. [2015] :cite:p:`fo
 
 .. code-block:: python
    
-   import novelpy
+   import InovelPy
 
    # Trend
-   trend = novelpy.utils.novelty_trend(year_range = range(2000,2011,1),
+   trend = InovelPy.utils.novelty_trend(year_range = range(2000,2011,1),
                  variables = ["c04_referencelist"],
                  id_variable = "PMID",
                  indicators = ["foster"])
@@ -288,12 +288,12 @@ Here is a straightforward implementation to run Foster et al. [2015] :cite:p:`fo
 .. code-block:: python
 
    # demo.py
-   import novelpy
+   import InovelPy
    import tqdm
 
    # all the cooc possible not including the one done above
 
-   ref_cooc = novelpy.utils.cooc_utils.create_cooc(
+   ref_cooc = InovelPy.utils.cooc_utils.create_cooc(
                     collection_name = "Ref_Journals_sample",
                     year_var="year",
                     var = "c04_referencelist",
@@ -303,7 +303,7 @@ Here is a straightforward implementation to run Foster et al. [2015] :cite:p:`fo
 
    ref_cooc.main()
 
-   ref_cooc = novelpy.utils.cooc_utils.create_cooc(
+   ref_cooc = InovelPy.utils.cooc_utils.create_cooc(
                     collection_name = "Meshterms_sample",
                     year_var="year",
                     var = "Mesh_year_category",
@@ -313,7 +313,7 @@ Here is a straightforward implementation to run Foster et al. [2015] :cite:p:`fo
 
    ref_cooc.main()
 
-   ref_cooc = novelpy.utils.cooc_utils.create_cooc(
+   ref_cooc = InovelPy.utils.cooc_utils.create_cooc(
                     collection_name = "Meshterms_sample",
                     year_var="year",
                     var = "Mesh_year_category",
@@ -326,7 +326,7 @@ Here is a straightforward implementation to run Foster et al. [2015] :cite:p:`fo
 
    # Uzzi et al.(2013) Meshterms_sample
    for focal_year in tqdm.tqdm(range(2000,2011), desc = "Computing indicator for window of time"):
-       Uzzi = novelpy.indicators.Uzzi2013(collection_name = "Meshterms_sample",
+       Uzzi = InovelPy.indicators.Uzzi2013(collection_name = "Meshterms_sample",
                                               id_variable = 'PMID',
                                               year_variable = 'year',
                                               variable = "Mesh_year_category",
@@ -337,7 +337,7 @@ Here is a straightforward implementation to run Foster et al. [2015] :cite:p:`fo
 
    # Uzzi et al.(2013) Ref_Journals_sample
    for focal_year in tqdm.tqdm(range(2000,2011), desc = "Computing indicator for window of time"):
-       Uzzi = novelpy.indicators.Uzzi2013(collection_name = "Ref_Journals_sample",
+       Uzzi = InovelPy.indicators.Uzzi2013(collection_name = "Ref_Journals_sample",
                                               id_variable = 'PMID',
                                               year_variable = 'year',
                                               variable = "c04_referencelist",
@@ -348,7 +348,7 @@ Here is a straightforward implementation to run Foster et al. [2015] :cite:p:`fo
 
    # Foster et al.(2015) Meshterms_sample
    for focal_year in tqdm.tqdm(range(2000,2011), desc = "Computing indicator for window of time"):
-       Foster = novelpy.indicators.Foster2015(collection_name = "Meshterms_sample",
+       Foster = InovelPy.indicators.Foster2015(collection_name = "Meshterms_sample",
                                               id_variable = 'PMID',
                                               year_variable = 'year',
                                               variable = "Mesh_year_category",
@@ -361,7 +361,7 @@ Here is a straightforward implementation to run Foster et al. [2015] :cite:p:`fo
 
    # Lee et al.(2015) Meshterms_sample
    for focal_year in tqdm.tqdm(range(2000,2011), desc = "Computing indicator for window of time"):
-       Lee = novelpy.indicators.Lee2015(collection_name = "Meshterms_sample",
+       Lee = InovelPy.indicators.Lee2015(collection_name = "Meshterms_sample",
                                               id_variable = 'PMID',
                                               year_variable = 'year',
                                               variable = "Mesh_year_category",
@@ -372,7 +372,7 @@ Here is a straightforward implementation to run Foster et al. [2015] :cite:p:`fo
 
    # Lee et al.(2015) Ref_Journals_sample
    for focal_year in tqdm.tqdm(range(2000,2011), desc = "Computing indicator for window of time"):
-       Lee = novelpy.indicators.Lee2015(collection_name = "Ref_Journals_sample",
+       Lee = InovelPy.indicators.Lee2015(collection_name = "Ref_Journals_sample",
                                               id_variable = 'PMID',
                                               year_variable = 'year',
                                               variable = "c04_referencelist",
@@ -383,7 +383,7 @@ Here is a straightforward implementation to run Foster et al. [2015] :cite:p:`fo
 
    # Wang et al.(2017) Meshterms_sample
    for focal_year in tqdm.tqdm(range(2000,2011)):
-       Wang = novelpy.indicators.Wang2017(collection_name = "Meshterms_sample",
+       Wang = InovelPy.indicators.Wang2017(collection_name = "Meshterms_sample",
                                               id_variable = 'PMID',
                                               year_variable = 'year',
                                               variable = "Mesh_year_category",
@@ -398,7 +398,7 @@ Here is a straightforward implementation to run Foster et al. [2015] :cite:p:`fo
 
    # Wang et al.(2017) Ref_Journals_sample
    for focal_year in tqdm.tqdm(range(2000,2011)):
-       Wang = novelpy.indicators.Wang2017(collection_name = "Ref_Journals_sample",
+       Wang = InovelPy.indicators.Wang2017(collection_name = "Ref_Journals_sample",
                                               id_variable = 'PMID',
                                               year_variable = 'year',
                                               variable = "c04_referencelist",
@@ -417,7 +417,7 @@ Here is a straightforward implementation to run Foster et al. [2015] :cite:p:`fo
 
 .. code-block:: python
 
-    from novelpy.utils.embedding import Embedding
+    from InovelPy.utils.embedding import Embedding
     
     embedding = Embedding(
     		year_variable = 'year',
@@ -440,11 +440,11 @@ Here is a straightforward implementation to run Foster et al. [2015] :cite:p:`fo
 
 .. code-block:: python
 
-   import novelpy
+   import InovelPy
    import tqdm
 
    for focal_year in tqdm.tqdm(range(2000,2011), desc = "Computing indicator for window of time"):
-    shibayama = novelpy.indicators.Shibayama2021(client_name="mongodb://localhost:27017",
+    shibayama = InovelPy.indicators.Shibayama2021(client_name="mongodb://localhost:27017",
                                     db_name = "novelty_sample",
          collection_name = 'Citation_net_sample',
          collection_embedding_name = 'embedding',
@@ -464,9 +464,9 @@ Here is a straightforward implementation to run Foster et al. [2015] :cite:p:`fo
 
 .. code-block:: python
 
-   from novelpy.utils import Embedding
-   from novelpy.utils import create_authors_past
-   import novelpy
+   from InovelPy.utils import Embedding
+   from InovelPy.utils import create_authors_past
+   import InovelPy
     
    # First step is to create a collection where each doc contains the author ID and its list of document he coauthored
    clean = create_authors_past(client_name = 'mongodb://localhost:27017',
@@ -510,7 +510,7 @@ Here is a straightforward implementation to run Foster et al. [2015] :cite:p:`fo
 
 .. code-block:: python
 
-    from novelpy.indicators.Author_proximity import Author_proximity
+    from InovelPy.indicators.Author_proximity import Author_proximity
     
     for year in range(2000,2011):
     	author =  Author_proximity(
@@ -532,7 +532,7 @@ Here is a straightforward implementation to run Foster et al. [2015] :cite:p:`fo
 
 .. code-block:: python
 
-   dist = novelpy.utils.plot_dist(
+   dist = InovelPy.utils.plot_dist(
                                   doc_id = 20100198,
                                   doc_year = 2010,
                                   id_variable = "PMID",
@@ -549,7 +549,7 @@ Here is a straightforward implementation to run Foster et al. [2015] :cite:p:`fo
 
 .. code-block:: python
 
-   trend = novelpy.utils.novelty_trend(year_range = range(2000,2011,1),
+   trend = InovelPy.utils.novelty_trend(year_range = range(2000,2011,1),
                  variable = ["c04_referencelist","a06_meshheadinglist"],
                  id_variable = "PMID",
                  indicator = ["foster","commonness"],
@@ -563,7 +563,7 @@ Here is a straightforward implementation to run Foster et al. [2015] :cite:p:`fo
 
 .. code-block:: python
 
-   correlation = novelpy.utils.correlation_indicators(year_range = range(2000,2011,1),
+   correlation = InovelPy.utils.correlation_indicators(year_range = range(2000,2011,1),
                  variables = ["c04_referencelist","Mesh_year_category"],
                  indicators = ["foster","lee","wang","shibayama"],
                  time_window_cooc = [3],
