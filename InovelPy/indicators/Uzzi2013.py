@@ -8,7 +8,7 @@ from random import sample
 from sklearn import preprocessing
 from itertools import combinations
 from scipy.sparse import triu, lil_matrix
-from novelpy.utils.run_indicator_tools import create_output
+from InovelPy.utils.run_indicator_tools import create_output
 
 pd.options.mode.chained_assignment = None
 
