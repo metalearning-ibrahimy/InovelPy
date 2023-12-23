@@ -10,7 +10,7 @@ from packaging import version
 from collections import defaultdict
 from scipy.sparse import lil_matrix
 import community as community_louvain
-from novelpy.utils.run_indicator_tools import create_output
+from InovelPy.utils.run_indicator_tools import create_output
 
 
 
