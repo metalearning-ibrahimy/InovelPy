@@ -8,7 +8,7 @@ import json
 
 def download_sample(client_name = None):
     
-    collection_list =["Citation_net","Meshterms", "Ref_Journals", "Title_abs", "authors"]
+    collection_list =["Citation_net", "Ref_Journals", "Title_abs", "authors"]
     for col in collection_list:
         col = col+ "_sample"
         url = 'https://pps-ibrahimy.ac.id/novelty/files/{}.zip?download=1'.format(col)
